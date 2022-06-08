@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import logo from '../../logo.svg'
+import ItemCount from '../ItemCount/ItemCount'
 
 function ItemListContainer({greeting}) {
     const [count, setCount] = useState(0)
@@ -8,8 +9,8 @@ function ItemListContainer({greeting}) {
         <>
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
                     <p>{greeting}</p>
+                <ItemCount stock = {10} initial={1}/>
                 </header>
             </div>
         </>

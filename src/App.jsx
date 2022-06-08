@@ -8,7 +8,7 @@ function App() {
   return ( //Solo retorna un elemento. Para mandar dos etiquetas se puede colocar <> h1...div...etc </>
     <>
       <NavBar/>
-      <ItemListContainer greeting = 'Hola Mundo'/>
+      <ItemListContainer greeting = 'Funcionamiento de:'/>
     </>
   )
 }
