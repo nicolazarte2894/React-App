@@ -13,7 +13,7 @@ function App() {
         <NavBar/>
         <Routes>
           {/* Enrutamiento */}
-          <Route index path = "/" element = {<ItemListContainer greeting = 'Funcionamiento de:'/>} />
+          <Route index path = "/" element = {<ItemListContainer/>} />
           {/* Pagina de error */}
           <Route path ="*" element = {<Navigate to = "/"/>}/>
         </Routes>

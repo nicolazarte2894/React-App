@@ -32,14 +32,13 @@ const ItemCount = ({stock,initial}) =>{
 
     return(
         <>
-            <h1>El contador de React</h1>
             <div className="d-grid gap-2">
-                <ButtonGroup aria-label="Basic example">
-                    <Button variant="outline-danger" className="btn-set-count" onClick={restar}>-</Button>
+                <ButtonGroup className= "btn-group" aria-label="Basic example">
+                    <Button variant="danger" className="btn-set-count" onClick={restar}>-</Button>
                     <h2>{count}</h2>
-                    <Button variant="outline-primary" className="btn-set-count" onClick={sumar}>+</Button>
+                    <Button variant="primary" className="btn-set-count" onClick={sumar}>+</Button>
                 </ButtonGroup>
-                <Button variant="primary" size="md" id="btn-add-cart" onClick={setCart}>
+                <Button variant="dark" size="md" id="btn-add-cart" onClick={setCart}>
                     Agregar al carrito
                 </Button>
             </div>
