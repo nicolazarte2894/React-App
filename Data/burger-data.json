@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1", 
+        "name": "Stacker Doble" , 
+        "category":"Carne", 
+        "description": "Doble carne, doble chedar y baicon", 
+        "price": "820", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/Stacker-Doble.png"
+    },
+    {
+        "id": "2", 
+        "name": "Stacker Triple" , 
+        "category":"Carne", 
+        "description": "Triple carne, triple chedar y baicon", 
+        "price": "930", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/Stacker-Triple.png"
+    },
+    {
+        "id": "3", 
+        "name": "Stacker Cuadruple" ,
+        "category":"", 
+        "description": "Cuadruple carne, cuadruple chedar y baicon", 
+        "price": "1020", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/Stacker-Cuadruple.png"
+    },
+    {
+        "id": "4", 
+        "name": "Stacker Quintuple" , 
+        "category":"Carne", 
+        "description": "Quintuple carne, doble chedar y baicon", 
+        "price": "1100", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/wordpress/web/app/uploads/sites/5/2021/04/stacker-quintuple.png"
+    },
+    {
+        "id": "5", 
+        "name": "BBQ Bacon XL Simple" , 
+        "category":"Carne", 
+        "description": "Medallón de  carne, chedar, baicon y salsa barbacoa", 
+        "price": "700", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/wordpress/web/app/uploads/sites/5/2021/04/BBQ-Bacon-xl.png"},
+    {
+        "id": "6", 
+        "name": "BBQ Bacon XL Doble" , 
+        "category":"Carne", 
+        "description": "Medallón de  carne, chedar, baicon y salsa barbacoa", 
+        "price": "820", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/wordpress/web/app/uploads/sites/5/2021/04/DOBLE-BBQ-Bacon-xl.png"
+    },
+    {
+        "id": "7", 
+        "name": "WOWcamole de carne" , 
+        "category":"Carne", 
+        "description": "Medallón de carne, tomate, cebolla y un exquicito guacamole", 
+        "price": "900", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/WowCamole_carne_300322.png"
+    },
+    {
+        "id": "8", 
+        "name": "Whopper® Chimiburga de Pollo" , 
+        "category":"Pollo", 
+        "description": "Sacate la manija y disfrutá: pan, pollo crispy, tomate, cebolla, lechuga, mayonesa y claro, CHIMICHURRI.", 
+        "price": "800", 
+        "img": "https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-burger-king-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/Chimiburga_Pollo.png"
+    }
+]

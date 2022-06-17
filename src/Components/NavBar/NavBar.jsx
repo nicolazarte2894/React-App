@@ -6,21 +6,24 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link , NavLink } from 'react-router-dom'
 
 function NavBar() {
     return (
         <>
             <Navbar bg="dark" expand="lg" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="#home">
-                        <img
-                        alt=""
-                        src="https://www.seekpng.com/png/full/209-2091809_burger-king-logo-white.png"
-                        width="60"
-                        height="60"
-                        className="d-inline-block align-top"
-                        />{' '}
-                    </Navbar.Brand>
+                    <Link to="/">
+                            <Navbar.Brand href="#home">
+                                <img
+                                alt=""
+                                src="https://www.seekpng.com/png/full/209-2091809_burger-king-logo-white.png"
+                                width="60"
+                                height="60"
+                                className="d-inline-block align-top"
+                                />
+                            </Navbar.Brand>
+                    </Link>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -30,10 +33,14 @@ function NavBar() {
                         >
                             <Nav.Link href="#action1">Nosotros</Nav.Link>
                             <Nav.Link href="#action2" className = "item">Contactanos</Nav.Link>
-                            <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Hamburguesas</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Merienda</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Helados</NavDropdown.Item>
+                            <NavDropdown title="Menu" id="navbarScrollingDropdown">
+                                <NavLink to="/categoria/Carne"><NavDropdown.Item href="#action3">Carne</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Pollo"><NavDropdown.Item href="#action4">Pollo</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Vegetariana"><NavDropdown.Item href="#action4">Vegetariana</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Ensaladas"><NavDropdown.Item href="#action4">Ensaladas</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Acompañamiento"><NavDropdown.Item href="#action4">Acompañamiento</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Desayuno y Merienda"><NavDropdown.Item href="#action4">Desayuno y Merienda</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Postre"><NavDropdown.Item href="#action4">Postre</NavDropdown.Item></NavLink>
                             </NavDropdown>
                         </Nav>
                         <Form className="d-flex">
