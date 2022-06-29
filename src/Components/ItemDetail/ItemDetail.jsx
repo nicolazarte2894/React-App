@@ -1,10 +1,13 @@
 import React from 'react'
-
-import ItemCount from '../ItemCount/ItemCount'
+// import ItemCount from '../ItemCount/ItemCount'
 import '../Item/Item.css'
+// import GoToCart from '../GoToCart'
+// import ContinueBuying from '../ContinueBuying'
+import OnAddChange from '../OnAddChange'
 
 
 const ItemDetail = ({product}) => {
+    
     return (
             <>
                 <div className='row'>
@@ -15,7 +18,22 @@ const ItemDetail = ({product}) => {
                         <h2>{product.name}</h2>
                         <p>{product.description}</p>
                         <p>$ {product.price}</p>
-                    <ItemCount stock = {10} initial={1}/>
+                        {/* Ternario para mostrar Intercambiabilidad */}
+                        {/* {   
+                            inputType === 'notInCart' ?
+                            <ItemCount
+                                onAdd = {addHandle}
+                                stock = {10} 
+                                initial={1}
+                            />
+                            :
+                            <>
+                                <GoToCart/>
+                                <ContinueBuying/>
+                            </>
+                        } */}
+                        <OnAddChange/>
+                    {/* <ItemCount stock = {10} initial={1}/> */}
                     </div>
                 </div>
                 {/* <Card className="card-item" style={{ width: '18rem' }}>

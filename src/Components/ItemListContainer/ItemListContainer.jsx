@@ -12,20 +12,22 @@ function ItemListContainer() {
     const [loading, setLoading] = useState(true)
     //console.log(data)
     //useParams
-    // const {categoriaId} = useParams()
-    // console.log(categoriaId);
+    const {categoriaId} = useParams()
+    console.log(categoriaId);
     //Ejecuto llamada a productos con Fetch haciendo uso de useEffect(,[]) con array de dependencia
     useEffect( () => {
-        //getFetch está modularizado en Helpers como componente .js (no .jsx)
-        // if (categoriaId) {
-        //     getFetchCategory(setProductos, categoriaId)  
-        // }else{
-            
-            
-        // }
-        getFetch(setProductos)
-        .finally(()=> setLoading(false))
-    },[])
+        if(categoriaId){
+            getFetch()
+            .then(data => setProductos(data.filter(filterProds => filterProds.category === categoriaId)))
+            .catch(err => console.log(err))
+            .finally(setLoading(false))
+        }else{
+            getFetch()
+            .then(data=>setProductos(data))
+            .catch(err => console.log(err))
+            .finally(setLoading(false))
+        }
+    },[categoriaId])
     return (
         <>
             <div className="App-header">

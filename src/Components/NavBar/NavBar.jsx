@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link , NavLink } from 'react-router-dom'
+import './NavBar.css'
 
 function NavBar() {
     return (
@@ -34,13 +35,13 @@ function NavBar() {
                             <Nav.Link href="#action1">Nosotros</Nav.Link>
                             <Nav.Link href="#action2" className = "item">Contactanos</Nav.Link>
                             <NavDropdown title="Menu" id="navbarScrollingDropdown">
-                                <NavLink to="/categoria/Carne"><NavDropdown.Item href="#action3">Carne</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Pollo"><NavDropdown.Item href="#action4">Pollo</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Vegetariana"><NavDropdown.Item href="#action4">Vegetariana</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Ensaladas"><NavDropdown.Item href="#action4">Ensaladas</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Acompañamiento"><NavDropdown.Item href="#action4">Acompañamiento</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Desayuno y Merienda"><NavDropdown.Item href="#action4">Desayuno y Merienda</NavDropdown.Item></NavLink>
-                                <NavLink to="/categoria/Postre"><NavDropdown.Item href="#action4">Postre</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Carne" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action4">Carne</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Pollo" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action5">Pollo</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Vegetariana" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action6">Vegetariana</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Ensaladas" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action7">Ensaladas</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Acompañamiento" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action8">Acompañamiento</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Desayuno y Merienda" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action9">Desayuno y Merienda</NavDropdown.Item></NavLink>
+                                <NavLink to="/categoria/Postre" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action10">Postre</NavDropdown.Item></NavLink>
                             </NavDropdown>
                         </Nav>
                         <Form className="d-flex">
@@ -52,7 +53,9 @@ function NavBar() {
                                 />
                             <Button variant="outline-primary">Buscar</Button>
                         </Form>
-                        <CartWidget/>
+                        <Link to='/cart'>
+                            <CartWidget/>
+                        </Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
