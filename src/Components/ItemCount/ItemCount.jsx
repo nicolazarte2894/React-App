@@ -2,7 +2,7 @@ import {useState} from 'react'
 import './ItemCount.css'
 import {ButtonGroup, Button} from 'react-bootstrap'
 
-const ItemCount = ({stock,initial, addHandle}) =>{
+const ItemCount = ({stock,initial, onAdd}) =>{
     //Estado
     const [count, setCount] = useState(initial);
 
@@ -25,9 +25,10 @@ const ItemCount = ({stock,initial, addHandle}) =>{
         }
     } 
     //Función Agregar al Carrito
-    const onAdd = () =>{
-            addHandle(count)
-            // document.querySelector('.stock-alert').textContent = `Se añadieron ${count} artículos al carrito`;
+    const setCart = () =>{
+        onAdd(count)
+        // console.log(count);
+        // document.querySelector('.stock-alert').textContent = `Se añadieron ${count} artículos al carrito`;
     } 
 
     return(
@@ -38,10 +39,7 @@ const ItemCount = ({stock,initial, addHandle}) =>{
                     <h2>{count}</h2>
                     <Button variant="primary" className="btn-set-count" onClick={sumar}>+</Button>
                 </ButtonGroup>
-                <Button variant="dark" size="md" id="btn-add-cart" onClick={(e) => {
-                    console.log(count);
-                    onAdd()
-                    }}>
+                <Button variant="dark" size="md" id="btn-add-cart" onClick={setCart}>
                     Añadir al carrito
                 </Button>
             </div>

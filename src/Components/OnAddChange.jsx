@@ -8,13 +8,13 @@ const OnAddChange = () => {
     //Manejador de Intercambiabilidad de boton onAdd
     const [quantity, setQuantity] = useState(0)
     //Guardar tipo de botones
-    const [inputType, setinputType] = useState('notInCart')
+    const [inputType, setInputType] = useState(true)
     //Handler de Intercambiabilidad y añadido a carrito
     const addHandle = (count)=>{
         //alert(`Se añadieron al carrito ${count} productos`)
         setQuantity(count)
         console.log(quantity);
-        setinputType('addedInCart');
+        setInputType(false);
     }
 
     // //Estado del tipo de input en el itemDetail
@@ -25,8 +25,8 @@ const OnAddChange = () => {
     //     setinputType('addedInCart');
     // }
     return (
-        <>
-            {   inputType === 'notInCart' ?
+        <div>
+            {   inputType === true ?
                     <ItemCount
                         onAdd = {addHandle}
                         stock = {10} 
@@ -38,7 +38,7 @@ const OnAddChange = () => {
                     <GoToCart/>
                 </>
             }
-        </>
+        </div>
     )
 }
 
