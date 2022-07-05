@@ -27,8 +27,6 @@ const ItemCount = ({stock,initial, onAdd}) =>{
     //Función Agregar al Carrito
     const setCart = () =>{
         onAdd(count)
-        // console.log(count);
-        // document.querySelector('.stock-alert').textContent = `Se añadieron ${count} artículos al carrito`;
     } 
 
     return(

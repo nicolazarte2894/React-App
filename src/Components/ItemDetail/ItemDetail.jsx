@@ -1,12 +1,22 @@
-import React from 'react'
-// import ItemCount from '../ItemCount/ItemCount'
+import React, { useState } from 'react'
+import { useCartContext } from '../../Context/CartContext'
+import ContinueBuying from '../ContinueBuying'
+import GoToCart from '../GoToCart'
+import ItemCount from '../ItemCount/ItemCount'
 import '../Item/Item.css'
-// import GoToCart from '../GoToCart'
-// import ContinueBuying from '../ContinueBuying'
-import OnAddChange from '../OnAddChange'
+//import OnAddChange from '../OnAddChange'
 
 
 const ItemDetail = ({product}) => {
+    const {cart, addToCart} = useCartContext()
+    //Guardar tipo de botones
+    const [inputType, setInputType] = useState(true)
+    const onAdd = (cant)=>{
+        addToCart({...product,cantidad: cant})
+        setInputType(false);
+    }
+
+    console.log(cart)
     
     return (
             <>
@@ -19,36 +29,23 @@ const ItemDetail = ({product}) => {
                         <p>{product.description}</p>
                         <p>$ {product.price}</p>
                         {/* Ternario para mostrar Intercambiabilidad */}
-                        {/* {   
-                            inputType === 'notInCart' ?
-                            <ItemCount
-                                onAdd = {addHandle}
-                                stock = {10} 
-                                initial={1}
-                            />
-                            :
-                            <>
-                                <GoToCart/>
-                                <ContinueBuying/>
-                            </>
-                        } */}
-                        <OnAddChange/>
-                    {/* <ItemCount stock = {10} initial={1}/> */}
+                        {/* <OnAddChange/> */}
+                        <div>
+                            {   inputType === true ?
+                                    <ItemCount
+                                        onAdd = {onAdd}
+                                        stock = {10} 
+                                        initial={1}
+                                    />
+                                :
+                                <>
+                                    <ContinueBuying/>
+                                    <GoToCart/>
+                                </>
+                            }
+                        </div>
                     </div>
                 </div>
-                {/* <Card className="card-item" style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={prod.img} />
-                    <Card.Body className="card-body">
-                        <Card.Title>{product.name}</Card.Title>
-                            <Card.Text>
-                            $ {product.price}
-                            </Card.Text>
-                            <Card.Text>
-                            $ {product.description}
-                            </Card.Text>
-                        <ItemCount stock = {10} initial={1}/>
-                    </Card.Body>
-                </Card>         */}
             </>
     )
 }

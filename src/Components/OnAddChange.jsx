@@ -17,13 +17,6 @@ const OnAddChange = () => {
         setInputType(false);
     }
 
-    // //Estado del tipo de input en el itemDetail
-    // const [inputType, setinputType] = useState('notInCart')
-    // //Handler de Intercambiabilidad y añadido a carrito
-    // const onAdd = (count)=>{
-    //     // alert(`Se añadieron al carrito ${count} productos`)
-    //     setinputType('addedInCart');
-    // }
     return (
         <div>
             {   inputType === true ?
