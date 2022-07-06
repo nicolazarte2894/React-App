@@ -12,7 +12,6 @@ import { CartContextProvider } from './Context/CartContext';
 function App() {
   return ( 
       <CartContextProvider>
-        <div>
           <BrowserRouter>
             <NavBar/>
             <Routes>
@@ -26,7 +25,6 @@ function App() {
               <Route path ="*" element = {<Navigate to = "/"/>}/>
             </Routes>
           </BrowserRouter>
-        </div>
       </CartContextProvider>
   )
 }

@@ -42,7 +42,6 @@ const ItemCount = ({stock,initial, onAdd}) =>{
                 </Button>
             </div>
                 <h4 className='stock-alert'></h4>
-            
         </>
     )
 }

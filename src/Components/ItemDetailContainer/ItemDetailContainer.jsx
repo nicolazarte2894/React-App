@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
-import { getFetch } from '../../Helpers/getFetch';
+import { useParams } from 'react-router-dom'
+import { getFetch } from '../../Helpers/getFetch'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import {Spinner} from 'react-bootstrap'
 
 const ItemDetailContainer = () => {
-    //State para producto
+    //Estados
     const [product, setProduct] = useState({})
+    const [loading, setLoading] = useState(true)
     //useParams hook
     const {id} = useParams()
     //useEffect para getFetchDetail
@@ -15,18 +17,24 @@ const ItemDetailContainer = () => {
             getFetch()
             .then(data => setProduct(data.find(item => item.id === id)))
             //.catch(err => console.log(err))
-            .finally(err => console.log(err))
+            .finally(setLoading(false))
         }else{
             getFetch()
             .then(data=>setProduct(data))
             //.catch(err => console.log(err))
-            .finally(err => console.log(err))
+            .finally(setLoading(false))
         }
     }, [])
     
     return (
-        <>
-            <ItemDetail product={product}/>
+        <>  
+            <div>
+                {   loading?
+                    <Spinner animation="border" variant="warning" />
+                    :
+                    <ItemDetail product={product}/>
+                }
+            </div>
         </>
     )
 };

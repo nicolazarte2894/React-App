@@ -15,9 +15,7 @@ const ItemDetail = ({product}) => {
         addToCart({...product,cantidad: cant})
         setInputType(false);
     }
-
-    console.log(cart)
-    
+    //console.log(cart)  
     return (
             <>
                 <div className='row'>

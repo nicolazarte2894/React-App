@@ -8,8 +8,10 @@ import FormControl from 'react-bootstrap/FormControl'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link , NavLink } from 'react-router-dom'
 import './NavBar.css'
+import { useCartContext } from '../../Context/CartContext'
 
 function NavBar() {
+    const {cart, iconCart} = useCartContext()
     return (
         <>
             <Navbar bg="dark" expand="lg" variant="dark">
@@ -44,7 +46,7 @@ function NavBar() {
                                 <NavLink to="/categoria/Postre" className={({isActive})=> isActive? "activeLink" : "noActiveLink"}><NavDropdown.Item href="#action10">Postre</NavDropdown.Item></NavLink>
                             </NavDropdown>
                         </Nav>
-                        <Form className="d-flex">
+                        <Form className="d-flex mr-2">
                                 <FormControl
                                 type="search"
                                 placeholder="Buscar"
@@ -53,6 +55,12 @@ function NavBar() {
                                 />
                             <Button variant="outline-primary">Buscar</Button>
                         </Form>
+                        {
+                                cart.length<1?
+                                <div></div>
+                                :
+                                <Button variant='danger' size='md' className='rounded-circle ml-2'>{iconCart()}</Button>
+                        }
                         <Link to='/cart'>
                             <CartWidget/>
                         </Link>

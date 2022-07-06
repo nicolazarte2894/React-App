@@ -25,9 +25,24 @@ export const CartContextProvider = ({children}) =>{
             setCart([...cart,item])
         }
     }
+    //Borrar item de carrito
+    const deleteItem = (id) =>{
+        console.log(id)
+        const newCart = cart.filter(itemCarrito=>itemCarrito.id !== id)
+        //console.log(newCart)
+        // setCart(newCart)
+    }
     //Vaciar el carrito
     const clearCart = () => {
         setCart([])
+    }
+    //Suma de precio total
+    const totalPrice = () =>{
+        return cart.reduce((acum,item)=>acum+item.price*item.cantidad,0)
+    }
+    //Cantidad de items en el carrito
+    const iconCart = ()=>{
+        return cart.reduce((acum,item)=>acum+item.cantidad,0)
     }
 
     return(
@@ -35,7 +50,10 @@ export const CartContextProvider = ({children}) =>{
             value={{
                 cart,
                 addToCart,
-                clearCart
+                deleteItem,
+                clearCart,
+                totalPrice,
+                iconCart
                 } 
             }
         >

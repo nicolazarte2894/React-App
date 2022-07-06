@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { getFetch  } from '../../Helpers/getFetch'
 // import { getFetchCategory } from '../../Helpers/getFetchCategory'
 import { useParams } from 'react-router-dom'
+import { Spinner, Button} from 'react-bootstrap'
 
 
 function ItemListContainer() {
@@ -32,7 +33,21 @@ function ItemListContainer() {
         <>
             <div className="App-header">
                 {   loading?
-                    <h1>Cargando datos</h1>
+                    // <Spinner animation="border" role="status">
+                    // <span className="visually-hidden">Loading...</span>
+                    // </Spinner>
+                    // <Spinner animation="border" variant="warning" size='lg' />
+                    // <h2>Cargando...</h2>
+                    <Button variant="primary" disabled>
+                        <Spinner
+                        as="span"
+                        animation="grow"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                        />
+                        Loading...
+                    </Button>
                     :
                     <ItemList products={data}/>
                 }
